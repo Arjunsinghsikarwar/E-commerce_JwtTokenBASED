@@ -1,42 +1,56 @@
-# E-commerce_JwtTokenBASED # E-commerce_JwtTokenBASED
-
-E-Commerce Website (JWT Token Based)
+E-Commerce JWT Token Based
 
 This is a simple E-commerce project built using Spring Boot, Spring Security, JWT, and React.
-It shows how login, registration, and secure API access work using JWT tokens.
+It demonstrates how login, registration, and secure API access work using JWT tokens.
 
-Tech Stack
+# Tech Stack
 
 Backend: Spring Boot, Spring Security, JWT, Hibernate, MySQL
-
 Frontend: React, Axios, HTML, CSS, TailwindCSS
 
-Features
+# Features
 
-User can register and log in.
+1.Users can register and log in.
 
-A JWT token is generated after successful login.
+2.A JWT token is generated after successful login.
 
-Only users with a valid token can access secure API endpoints.
+3.Only users with a valid token can access secure API endpoints.
 
-Unauthorized users cannot access secure pages.
+4.Unauthorized users cannot access secure pages.
 
-Frontend and backend are connected using REST APIs.
+5.Frontend and backend are connected using REST APIs.
 
-How It Works
+####### I created custom product data for demonstration purposes, showing how secure APIs work with JWT.
 
-User registers → data saved in database.
+# How It Works
 
-User logs in → Spring Security checks credentials.
+1. User Registration: Data is saved in the database.
 
-On success → JWT token is generated.
+2 User Login: Spring Security verifies credentials.
 
-React stores the token in localStorage and sends it with API requests.
+3 JWT Generation: On successful login, a token is generated.
 
-Backend verifies the token and allows access to secure routes.
+4 Frontend Handling: React stores the token in localStorage and sends it with API requests.
 
-In Simple :
+5 Backend Verification: The backend validates the token and allows access to protected routes.
 
-This project helps understand how JWT authentication works between a Spring Boot backend and a React frontend in a simple way.
+In simple terms:
+This project demonstrates JWT-based authentication between a Spring Boot backend and a React frontend. It shows how secure APIs work, how tokens are used to verify users, and how only authorized users can access certain data.
 
-### Both Frontend and backend run on the default port.
+How to Run
+
+Backend:
+
+Configure application.properties with your Postgresql database.
+
+Run the Spring Boot application (default port 5173).
+
+Frontend:
+
+Navigate to the React project folder.
+
+Run npm install to install dependencies.
+
+Run npm start (default port 5173).
+
+Open the frontend in your browser and try registering, logging in, and accessing secure routes.
