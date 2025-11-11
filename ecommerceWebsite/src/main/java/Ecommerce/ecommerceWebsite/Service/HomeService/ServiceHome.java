@@ -15,14 +15,19 @@ public class ServiceHome {
 
 
     public List<Products> getSomeProducts(){
-        List<Products> productsList = productsRepo.getSomeRandomProducts(18);
-        return productsList;
+        List<Products> listProduct = productsRepo.getSomeRandomProducts(18);
+        return listProduct;
     }
 
 
     public List<String> getAllCategory() {
-
         return productsRepo.getAllCategory();
+    }
+
+    public List<Products> getSearchedProducts(String prodName) {
+        List<Products> getSameProduct = productsRepo.getSameProducts(prodName);
+        if(getSameProduct.isEmpty()) return List.of();
+        return getSameProduct;
 
     }
 }
