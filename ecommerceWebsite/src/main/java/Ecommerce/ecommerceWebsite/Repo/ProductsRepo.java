@@ -32,4 +32,6 @@ public interface ProductsRepo extends JpaRepository<Products,Long> {
             nativeQuery = true)
     List<Products> getOrderProducts(@Param("id") Long id);
 
+    @Query(value = "Select * from products where product_name LIKE %:prodName%",nativeQuery = true)
+    List<Products> getSameProducts(@Param("prodName") String prodName);
 }
