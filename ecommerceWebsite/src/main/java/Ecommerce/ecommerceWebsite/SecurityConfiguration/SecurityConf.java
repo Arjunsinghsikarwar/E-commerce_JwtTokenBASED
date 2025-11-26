@@ -33,14 +33,15 @@ public class SecurityConf {
     @Autowired
     UserDetailsService userDetailsService;
 
-    @Bean
+   @Bean
    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
        return http
                .cors(Customizer.withDefaults())
                .csrf(customizer -> customizer.disable())
                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                .authorizeHttpRequests(request->request.requestMatchers("/login/user", "/register").permitAll()
-                       .requestMatchers("/admin/**").hasAuthority("ROLE_USER")
+                       .requestMatchers("/product/buyProduct/**","product/getAllBuyedProducts/**","/getCategoryProduct/{category}","home/search/{prodName}","product/{id}").hasAuthority("ROLE_USER")
+                       .requestMatchers("/**").hasAuthority("ROLE_ADMIN")
                        .anyRequest().authenticated())
                .authenticationProvider(authenticationProvider())
                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
